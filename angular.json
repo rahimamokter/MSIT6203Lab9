@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "MSIT6203Lab9"
+    }
+  },
+  "defaultProject": "MSIT6203Lab9",
+  "cli": {
+    "analytics": false
+  }
 }
