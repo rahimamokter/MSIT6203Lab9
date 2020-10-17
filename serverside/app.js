@@ -1,11 +1,14 @@
 const express = require('express');
 const bodyParser  = require('body-parser');
+
 const app = express();
+
 // use the following code on any request that matches the specified mount path
 app.use((req, res, next) => {
    console.log('This line is always called');
    res.setHeader('Access-Control-Allow-Origin', '*'); //can connect from any host
-   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS'); //allowable methods
+
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS'); //allowable methods
    res.setHeader('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept');
    next();
 });
@@ -20,8 +23,9 @@ app.post('/students', (req, res, next) => {
     const student = req.body;
     console.log(student.firstName + " " + student.lastName);
     //sent an acknowledgment back to caller 
-    res.status(201).json('Post successful');
-  });
+     res.status(201).json('Post successfully');
+
+    });
   
   app.use("/students", (req, res, next) => {
     const students = [
@@ -30,7 +34,9 @@ app.post('/students', (req, res, next) => {
       { "id" : "3", "firstName" : "Joan" , "lastName" : "Doe" }
    
     ];
+  
     res.json(students);
+  
   });
   
   module.exports = app;
