@@ -1,5 +1,26 @@
 const express = require('express');
+const bodyParser  = require('body-parser');
 const app = express();
+
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+ 
+// parse application/json
+app.use(bodyParser.json())
+
+
+// serve incoming post requests to /students
+app.post('/students', (req, res, next) => {
+  const student = req.body;
+  console.log(student.firstName + " " + student.lastName);
+  //sent an acknowledgment back to caller 
+  res.status(201).json('Post successful');
+});
+
+
+
+
 // use the following code on any request that matches the specified mount path
 app.use((req, res, next) => {
    console.log('This line is always called');

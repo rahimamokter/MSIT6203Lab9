@@ -14,4 +14,13 @@ export class StudentService {
     getStudents() {
         return this.http.get('http://localhost:8000/students');
     }
+
+        // Uses http.post() to post data 
+        addStudents(firstName: string, lastName: string) {
+            this.http.post('http://localhost:8000/students',{ firstName, lastName })
+          .subscribe((responseData) => {
+             console.log(responseData);
+           }); 
+        }
+    
 }
