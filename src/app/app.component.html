@@ -6,3 +6,16 @@
     
     
 </div>
+
+<div>
+  <ul *ngFor ="let student of students let i = index">
+    <li> {{student.id}}: {{student.firstName}} {{student.lastName}} (index {{i}})</li>
+  </ul>
+
+</div>
+
+
+<div>
+  <pre>{{students | json}}</pre>
+  
+</div>
