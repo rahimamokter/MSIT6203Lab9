@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
+
  
 @Injectable()
 export class StudentService {
@@ -16,8 +17,8 @@ export class StudentService {
     }
 
         // Uses http.post() to post data 
-        addStudents(firstName: string, lastName: string) {
-            this.http.post('http://localhost:8000/students',{ firstName, lastName })
+        addStudents(firstName: string, lastName: string, contactEmail: string) {
+            this.http.post('http://localhost:8000/students',{ firstName, lastName, contactEmail })
           .subscribe((responseData) => {
              console.log(responseData);
            }); 

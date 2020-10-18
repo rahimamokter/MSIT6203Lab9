@@ -9,11 +9,13 @@ import { StudentService } from '../student.service'
 export class NewStudentFormComponent implements OnInit {
   @Input() firstName: string;
   @Input() lastName: string;
-  
+  @Input() contactEmail: string;
+
   constructor(private _myService: StudentService) { }
   onSubmit(){
-    console.log("You submitted: " + this.firstName + " " + this.lastName);
-    this._myService.addStudents(this.firstName ,this.lastName);
+    console.log("You submitted: " + this.firstName + " " + this.lastName + " " 
+    + this.contactEmail);
+    this._myService.addStudents(this.firstName ,this.lastName , this.contactEmail);
   }
   
   ngOnInit(): void {

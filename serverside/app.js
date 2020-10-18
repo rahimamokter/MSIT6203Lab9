@@ -21,7 +21,7 @@ app.use(bodyParser.json())
 // serve incoming post requests to /students
 app.post('/students', (req, res, next) => {
     const student = req.body;
-    console.log(student.firstName + " " + student.lastName);
+    console.log(student.firstName + " " + student.lastName + " " + student.contactEmail);
     //sent an acknowledgment back to caller 
      res.status(201).json('Post successfully');
 
@@ -29,9 +29,10 @@ app.post('/students', (req, res, next) => {
   
   app.use("/students", (req, res, next) => {
     const students = [
-      { "id" : "1", "firstName" : "John" , "lastName" : "Dow" }, 
-      { "id" : "2", "firstName" : "Ann" , "lastName" : "Smith" }, 
-      { "id" : "3", "firstName" : "Joan" , "lastName" : "Doe" }
+      { "id" : "1", "firstName" : "Mathew" , "lastName" : "Brown" , "contactEmail": "mbrow496@students.kennesaw.edu" }, 
+      { "id" : "2", "firstName" : "Mosammat" , "lastName" : "Akter", "contactEmail": "makter1@students.kennesaw.edu"}, 
+      { "id" : "3", "firstName" : "Helen" , "lastName" : "Mcdaniel", "contactEmail": "hmcdani6@students.kennesaw.edu" }, 
+      { "id" : "4", "firstName" : "Randolph" , "lastName" : "Cassiee" , "contactEmail": "crando14@students.kennesaw.edu"}
    
     ];
   
